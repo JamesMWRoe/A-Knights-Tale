@@ -1,0 +1,7 @@
+res://Scenes/coin.tscn
+res://Scenes/game.tscn
+res://Scenes/player.tscn
+res://Scenes/platform.tscn
+res://Scripts/coin.gd
+res://Scripts/killzone.gd
+res://Scenes/killzone.tscn
