@@ -1,11 +1,9 @@
 extends Area2D
 
-signal picked_up
-
 func _ready():
-	print('coin added');
+	print('coin added')
 
-func _on_body_entered(body):
-	print('coin picked up');
-	picked_up.emit();
-	queue_free();
+func _on_body_entered(_body):
+	print('coin picked up')
+	%GameManager.add_to_score()
+	queue_free()
