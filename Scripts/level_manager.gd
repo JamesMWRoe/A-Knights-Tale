@@ -7,4 +7,5 @@ extends Node
 func _ready():
 	player_camera.limit_left = worldbound_left.position.x
 	player_camera.limit_right = worldbound_right.position.x
+	player_camera.limit_bottom = 48
 

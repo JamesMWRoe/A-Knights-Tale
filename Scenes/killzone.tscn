@@ -4,7 +4,6 @@
 
 [node name="Killzone" type="Area2D"]
 collision_layer = 8
-collision_mask = 0
 script = ExtResource("1_0fsgt")
 
 [node name="Timer" type="Timer" parent="."]
