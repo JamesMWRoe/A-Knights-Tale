@@ -1,7 +1,12 @@
-res://Scenes/Levels/level_template.tscn
+res://Scenes/falling_block.tscn
 res://Scripts/killzone.gd
-res://Scenes/player.tscn
-res://Scenes/coin.tscn
+res://Scripts/player.gd
+res://Scenes/Levels/level_template.tscn
+res://Scenes/check_point.tscn
+res://Scenes/platform_small.tscn
+res://Scenes/killzone.tscn
 res://Scenes/slime_enemy.tscn
-res://Scenes/Levels/level_0.tscn
-res://Scenes/Levels/test_level.tscn
+res://Scenes/Levels/level_1.tscn
+res://Scenes/player.tscn
+res://Scenes/Levels/level_2.tscn
+res://Scripts/checkpoint_manager.gd

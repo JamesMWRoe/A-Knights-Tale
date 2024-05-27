@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwa8b2hdwltx0"]
+
+[ext_resource type="PackedScene" uid="uid://de24f2g1dfko" path="res://Scenes/Levels/level_template.tscn" id="1_8rl41"]
+[ext_resource type="PackedScene" uid="uid://ccxsc63hr3grc" path="res://Scenes/falling_block.tscn" id="2_jjij8"]
+
+[node name="LevelTemplate" instance=ExtResource("1_8rl41")]
+
+[node name="FallingBlock" parent="." index="5" instance=ExtResource("2_jjij8")]
+position = Vector2(48, 16)
