@@ -1,9 +1,164 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwa8b2hdwltx0"]
+[gd_scene load_steps=7 format=3 uid="uid://dwa8b2hdwltx0"]
 
 [ext_resource type="PackedScene" uid="uid://de24f2g1dfko" path="res://Scenes/Levels/level_template.tscn" id="1_8rl41"]
+[ext_resource type="TileSet" uid="uid://o8vt67bcjfyy" path="res://Assets/level_tileset.tres" id="2_fgktv"]
 [ext_resource type="PackedScene" uid="uid://ccxsc63hr3grc" path="res://Scenes/falling_block.tscn" id="2_jjij8"]
+[ext_resource type="PackedScene" uid="uid://od44vax1x551" path="res://Scenes/platform.tscn" id="3_4kwbx"]
+[ext_resource type="PackedScene" uid="uid://dgw1kf7u5iscn" path="res://Scenes/check_point.tscn" id="3_p7csj"]
+[ext_resource type="PackedScene" uid="uid://diihgsaykv3u4" path="res://Scenes/slime_enemy.tscn" id="6_7ywrt"]
 
 [node name="LevelTemplate" instance=ExtResource("1_8rl41")]
 
-[node name="FallingBlock" parent="." index="5" instance=ExtResource("2_jjij8")]
-position = Vector2(48, 16)
+[node name="CheckPoint" parent="CheckpointManager" index="1" instance=ExtResource("3_p7csj")]
+position = Vector2(432, -80)
+
+[node name="CheckPoint2" parent="CheckpointManager" index="2" instance=ExtResource("3_p7csj")]
+position = Vector2(448, 48)
+
+[node name="TileMap" parent="." index="2"]
+tile_set = ExtResource("2_fgktv")
+
+[node name="BoundRight" parent="WorldBoundary" index="1"]
+position = Vector2(1120, 0)
+
+[node name="Challenge_0" type="Node" parent="." index="5"]
+
+[node name="TileMap" type="TileMap" parent="Challenge_0" index="0"]
+tile_set = ExtResource("2_fgktv")
+format = 2
+
+[node name="Platforms" type="Node" parent="Challenge_0" index="1"]
+
+[node name="FallingBlocks" type="Node" parent="Challenge_0" index="2"]
+
+[node name="Challenge_1" type="Node" parent="." index="6"]
+
+[node name="TileMap" type="TileMap" parent="Challenge_1" index="0"]
+tile_set = ExtResource("2_fgktv")
+format = 2
+layer_0/tile_data = PackedInt32Array(131081, 393216, 1, 131082, 393216, 1, 131083, 393216, 1, 131084, 393216, 1, 131085, 393216, 1, 131086, 393216, 1, 131087, 393216, 1, 131088, 393216, 1, 131089, 393216, 1, 131090, 393216, 1, 131091, 393216, 1, 131092, 393216, 1, 131093, 393216, 1, 131094, 393216, 1, 131095, 393216, 1, 131096, 393216, 1, 131097, 393216, 1, 131098, 393216, 1, -65527, 393216, 1, -131063, 393216, 1, -196599, 393216, 1, -262135, 393216, 1, -327671, 393216, 1, -393207, 393216, 1, -458743, 393216, 1, -524279, 393216, 1, 131099, 393216, 1, 65563, 393216, 1, 27, 393216, 1, -65509, 393216, 1, -131045, 393216, 1, -196581, 393216, 1, -262117, 393216, 1, -327653, 393216, 1, -589797, 393216, 1, -589798, 393216, 1, -589799, 393216, 1, -589800, 393216, 1, -589801, 393216, 1, -589802, 393216, 1, -589803, 393216, 1, -589804, 393216, 1, -589805, 393216, 1, -589806, 393216, 1, -589807, 393216, 1, -589808, 393216, 1, -589809, 393216, 1, -589810, 393216, 1, -589811, 393216, 1, -589812, 393216, 1, -589813, 393216, 1, -589814, 393216, 1, -589815, 393216, 1, -196591, 393216, 1, -262127, 393216, 1, -262126, 393216, 1, -196590, 393216, 1, -131055, 393216, 1, -131054, 393216, 1)
+
+[node name="Platforms" type="Node" parent="Challenge_1" index="1"]
+
+[node name="Platform" parent="Challenge_1/Platforms" index="0" instance=ExtResource("3_4kwbx")]
+position = Vector2(416, -80)
+
+[node name="FallingBlocks" type="Node" parent="Challenge_1" index="2"]
+
+[node name="FallingBlock" parent="Challenge_1/FallingBlocks" index="0" instance=ExtResource("2_jjij8")]
+position = Vector2(208, 0)
+
+[node name="FallingBlock2" parent="Challenge_1/FallingBlocks" index="1" instance=ExtResource("2_jjij8")]
+position = Vector2(224, 0)
+
+[node name="FallingBlock3" parent="Challenge_1/FallingBlocks" index="2" instance=ExtResource("2_jjij8")]
+position = Vector2(240, 0)
+
+[node name="FallingBlock4" parent="Challenge_1/FallingBlocks" index="3" instance=ExtResource("2_jjij8")]
+position = Vector2(336, -64)
+
+[node name="FallingBlock5" parent="Challenge_1/FallingBlocks" index="4" instance=ExtResource("2_jjij8")]
+position = Vector2(352, -64)
+
+[node name="FallingBlock6" parent="Challenge_1/FallingBlocks" index="5" instance=ExtResource("2_jjij8")]
+position = Vector2(368, -64)
+
+[node name="Challenge_2" type="Node" parent="." index="7"]
+
+[node name="TileMap" type="TileMap" parent="Challenge_2" index="0"]
+tile_set = ExtResource("2_fgktv")
+format = 2
+layer_0/tile_data = PackedInt32Array(131102, 393216, 1, 131103, 393216, 1, 131104, 393216, 1, 131105, 393216, 1, 131106, 393216, 1, 131107, 393216, 1, 131108, 393216, 1, 131109, 393216, 1, 131110, 393216, 1, 131113, 393216, 1, 65577, 393216, 1, 41, 393216, 1, -65495, 393216, 1, -131031, 393216, 1, -196567, 393216, 1, -262103, 393216, 1, -327639, 393216, 1, -393175, 393216, 1, -458711, 393216, 1, -524247, 393216, 1, -589783, 393216, 1, 131111, 393216, 1, 131112, 393216, 1, -393182, 393216, 1, -393177, 393216, 1, -327641, 393216, 1, -262105, 393216, 1, -262106, 393216, 1, -262107, 393216, 1, -262108, 393216, 1, -262109, 393216, 1, -262110, 393216, 1, -262111, 393216, 1, -262112, 393216, 1, -262113, 393216, 1, -262114, 393216, 1, -262115, 393216, 1, -262116, 393216, 1, 131101, 393216, 1, -655332, 393216, 1, -655331, 393216, 1, -655330, 393216, 1, -655329, 393216, 1, -655328, 393216, 1, -655327, 393216, 1, -655326, 393216, 1, -655325, 393216, 1, -655324, 393216, 1, -655323, 393216, 1, -655322, 393216, 1, -655321, 393216, 1, -655320, 393216, 1, 29, 393216, 1, 65565, 393216, 1)
+
+[node name="Platforms" type="Node" parent="Challenge_2" index="1"]
+
+[node name="Platform" parent="Challenge_2/Platforms" index="0" instance=ExtResource("3_4kwbx")]
+position = Vector2(464, -80)
+
+[node name="FallingBlocks" type="Node" parent="Challenge_2" index="2"]
+
+[node name="FallingBlock" parent="Challenge_2/FallingBlocks" index="0" instance=ExtResource("2_jjij8")]
+position = Vector2(480, -80)
+
+[node name="FallingBlock2" parent="Challenge_2/FallingBlocks" index="1" instance=ExtResource("2_jjij8")]
+position = Vector2(496, -80)
+
+[node name="FallingBlock3" parent="Challenge_2/FallingBlocks" index="2" instance=ExtResource("2_jjij8")]
+position = Vector2(512, -80)
+
+[node name="FallingBlock4" parent="Challenge_2/FallingBlocks" index="3" instance=ExtResource("2_jjij8")]
+position = Vector2(528, -80)
+
+[node name="FallingBlock5" parent="Challenge_2/FallingBlocks" index="4" instance=ExtResource("2_jjij8")]
+position = Vector2(560, -80)
+
+[node name="FallingBlock6" parent="Challenge_2/FallingBlocks" index="5" instance=ExtResource("2_jjij8")]
+position = Vector2(576, -80)
+
+[node name="FallingBlock7" parent="Challenge_2/FallingBlocks" index="6" instance=ExtResource("2_jjij8")]
+position = Vector2(592, -80)
+
+[node name="FallingBlock8" parent="Challenge_2/FallingBlocks" index="7" instance=ExtResource("2_jjij8")]
+position = Vector2(608, -80)
+
+[node name="Slimes" type="Node" parent="Challenge_2" index="3"]
+
+[node name="SlimeEnemy" parent="Challenge_2/Slimes" index="0" instance=ExtResource("6_7ywrt")]
+position = Vector2(544, -112)
+start_right = false
+is_moving = false
+
+[node name="SlimeEnemy2" parent="Challenge_2/Slimes" index="1" instance=ExtResource("6_7ywrt")]
+position = Vector2(448, -80)
+start_right = false
+is_moving = false
+
+[node name="SlimeEnemy3" parent="Challenge_2/Slimes" index="2" instance=ExtResource("6_7ywrt")]
+position = Vector2(464, -80)
+start_right = false
+is_moving = false
+
+[node name="SlimeEnemy4" parent="Challenge_2/Slimes" index="3" instance=ExtResource("6_7ywrt")]
+position = Vector2(480, -80)
+start_right = false
+is_moving = false
+
+[node name="SlimeEnemy5" parent="Challenge_2/Slimes" index="4" instance=ExtResource("6_7ywrt")]
+position = Vector2(496, -80)
+start_right = false
+is_moving = false
+
+[node name="SlimeEnemy6" parent="Challenge_2/Slimes" index="5" instance=ExtResource("6_7ywrt")]
+position = Vector2(512, -80)
+start_right = false
+is_moving = false
+
+[node name="SlimeEnemy7" parent="Challenge_2/Slimes" index="6" instance=ExtResource("6_7ywrt")]
+position = Vector2(528, -80)
+start_right = false
+is_moving = false
+
+[node name="SlimeEnemy8" parent="Challenge_2/Slimes" index="7" instance=ExtResource("6_7ywrt")]
+position = Vector2(544, -80)
+start_right = false
+is_moving = false
+
+[node name="SlimeEnemy9" parent="Challenge_2/Slimes" index="8" instance=ExtResource("6_7ywrt")]
+position = Vector2(560, -80)
+start_right = false
+is_moving = false
+
+[node name="SlimeEnemy10" parent="Challenge_2/Slimes" index="9" instance=ExtResource("6_7ywrt")]
+position = Vector2(576, -80)
+start_right = false
+is_moving = false
+
+[node name="SlimeEnemy11" parent="Challenge_2/Slimes" index="10" instance=ExtResource("6_7ywrt")]
+position = Vector2(592, -80)
+start_right = false
+is_moving = false
+
+[node name="SlimeEnemy12" parent="Challenge_2/Slimes" index="11" instance=ExtResource("6_7ywrt")]
+position = Vector2(608, -80)
+start_right = false
+is_moving = false

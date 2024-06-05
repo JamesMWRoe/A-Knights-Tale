@@ -9,7 +9,10 @@ var checkpoint_list
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player.player_death.connect(handle_respawn)
-	
+	setup_checkpoint_list_with_all_checkpoints_in_level()
+
+
+func setup_checkpoint_list_with_all_checkpoints_in_level():
 	checkpoint_list = []
 	for child in get_children():
 		if child.has_signal('checkpoint_activated'):
